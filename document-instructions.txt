@@ -1,0 +1,46 @@
+Installation Instructions
+run command >> pip install -r requirements.txt
+run migrations
+
+User App
+User registration url -  http://127.0.0.1:8000/register/
+>> email is not unique.
+>> username is used for registration uniqueness.
+>> user will not be created with existing username.
+
+login url - http://127.0.0.1:8000/login/
+>>use username and password to login.
+
+Note -> user can not delete superuser and himself or herself.
+
+
+
+API App(instructions according to postman)
+Note -> all apis are secured excluding register api. use jwt token to input or get output from api. login api will generate token.
+in headers take Authorization as key and put Bearer <token> in value.
+
+user register
+method - post
+url - http://127.0.0.1:8000/api/user-register/
+keys - first_name, last_name, username, email, password
+
+login
+method - post
+keys - username, password
+url - http://127.0.0.1:8000/api/login/
+
+Get all users
+method - get
+url -  http://127.0.0.1:8000/api/all-user/
+
+View logging in user
+method - get
+url - http://127.0.0.1:8000/api/view-user/
+
+Get and Post(update too using Post) profile
+method - get, post
+url - http://127.0.0.1:8000/api/user-profile/
+
+to delete any user
+method - get
+url - http://127.0.0.1:8000/api/delete-any-user/idOfUser/

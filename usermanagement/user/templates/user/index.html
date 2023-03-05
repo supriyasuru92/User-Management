@@ -1,0 +1,15 @@
+{% extends "user/base.html" %}
+
+
+{% block content %}
+  <h1>Hello {{user.username}}</h1>
+  {% if all_users %}
+    <ul>
+      All Users :
+      {% for user in all_users %}
+          <li>{{ user.username }}&nbsp &nbsp<a href="{%url 'delete-user' user.id %}">Delete User</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <a href="{%url 'profile' %}">Go to your profile</a>
+{% endblock %}
